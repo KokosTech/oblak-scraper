@@ -1,0 +1,29 @@
+{
+  "name": "oblak-scraper",
+  "version": "0.1",
+  "description": "HA Project for scraping text and media from websites",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "yarn tsc --outDir dist",
+    "start": "node dist/index.js",
+    "dev": "concurrently \"npx tsc --watch --outDir dist\" \"nodemon -q dist/index.js\""
+  },
+  "type": "module",
+  "repository": "https://github.com/KokosTech/oblak-scraper.git",
+  "author": "Kaloyan Doychinov <kaloyan@kaloyan.tech>",
+  "license": "GPL-3.0-or-later",
+  "private": false,
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mariadb": "^3.1.1",
+    "typeorm": "^0.3.14"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^18.15.11",
+    "concurrently": "^8.0.1",
+    "nodemon": "^2.0.22",
+    "typescript": "^5.0.4"
+  }
+}
