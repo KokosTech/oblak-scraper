@@ -35,6 +35,37 @@ services:
       placement:
         constraints: [node.role == manager]
 
+  proxy-backup:
+    image: dockercloud/haproxy
+    depends_on:
+      - api
+    environment:
+      - BALANCE=leastconn
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - web
+    deploy:
+      placement:
+        constraints: [node.role == worker]
+
+  keepalived:
+    image: osixia/keepalived
+    environment:
+      - KEEPALIVED_INTERFACE=eth0
+      - KEEPALIVED_UNICAST_PEERS=192.168.0.10,192.168.0.11
+      - KEEPALIVED_VIRTUAL_IPS=192.168.0.100
+      - KEEPALIVED_PASSWORD=secret
+    volumes:
+      - /lib/modules:/lib/modules:ro
+      - /etc/localtime:/etc/localtime:ro
+    networks:
+      - web
+    deploy:
+      mode: global
+      placement:
+        constraints: [node.role == manager]
+
 networks:
   web:
     driver: overlay
