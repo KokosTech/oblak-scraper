@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+
+<HBox minHeight="180.0" minWidth="200.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oblakscraper.view.ImageContainer">
+   <children>
+      <ImageView fitHeight="180.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</HBox>

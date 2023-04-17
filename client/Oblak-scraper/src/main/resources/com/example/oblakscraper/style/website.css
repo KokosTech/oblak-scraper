@@ -1,0 +1,62 @@
+.box {
+    -fx-background-color: #00121e;
+}
+
+.text-area {
+    text-area-background: #00121e;
+    -fx-text-fill: #ffffff;
+}
+
+.text-area .content {
+    -fx-background-color: text-area-background;
+}
+
+#back-button {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 5px;
+}
+
+#scroll-box {
+    -fx-background-color: #00121e;
+}
+
+.scroll-box-border {
+    -fx-background-color: #00121e;
+}
+
+/*#FFCB9A: a light peachy tone that creates a warm contrast with the dark base color.*/
+/*#FFE773: a bright yellow-green color that creates a lively contrast with the dark base color.*/
+/*#A6A6A6: a medium gray color that creates a subtle contrast with the dark base color.*/
+/*#F6E7D2: a warm beige color that creates a soft contrast with the dark base color.*/
+
+.scroll-pane {
+    -fx-background-color: #1b1b1b;
+    -fx-background-radius: 5px;
+    -fx-background-size: 5px;
+}
+
+.scroll-bar:horizontal, .scroll-bar:vertical{
+    -fx-background-color:transparent;
+}
+
+.increment-button, .decrement-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track{
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0em;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+    -fx-background-color: royalblue;
+    -fx-background-radius: 5em;
+}
+
+.scroll-pane > .corner {
+    -fx-background-color: black;
+}

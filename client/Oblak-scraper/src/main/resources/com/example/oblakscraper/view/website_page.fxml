@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="TOP_CENTER" minHeight="540.0" minWidth="960.0" spacing="40.0" styleClass="box" stylesheets="@../style/website.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oblakscraper.controllers.WebsitePageController">
+   <children>
+      <VBox alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT">
+               <children>
+                  <Button minHeight="30.0" minWidth="30.0" mnemonicParsing="false" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin></Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER">
+               <children>
+                  <TextField editable="false" minHeight="30.0" minWidth="560.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox alignment="TOP_CENTER" spacing="10.0" VBox.vgrow="ALWAYS">
+         <children>
+            <HBox>
+               <children>
+                  <Label text="Text" textFill="WHITE">
+                     <padding>
+                        <Insets left="5.0" />
+                     </padding>
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font></Label>
+               </children>
+            </HBox>
+            <HBox VBox.vgrow="ALWAYS">
+               <children>
+                  <TextArea editable="false" focusTraversable="false" text="What is Lorem Ipsum?&#10;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.&#10;&#10;Why do we use it?&#10;It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).&#10;&#10;&#10;Where does it come from?&#10;Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of &quot;de Finibus Bonorum et Malorum&quot; (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, &quot;Lorem ipsum dolor sit amet..&quot;, comes from a line in section 1.10.32." wrapText="true" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox alignment="TOP_CENTER" spacing="10.0" VBox.vgrow="ALWAYS">
+         <children>
+            <HBox>
+               <children>
+                  <Label text="Images" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font></Label>
+               </children>
+            </HBox>
+            <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" VBox.vgrow="ALWAYS">
+               <content>
+                  <TilePane id="scroll-box" alignment="CENTER" hgap="15.0" vgap="15.0" />
+               </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="30.0" right="30.0" top="10.0" />
+   </padding>
+</VBox>

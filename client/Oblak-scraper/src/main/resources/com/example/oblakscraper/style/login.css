@@ -1,0 +1,35 @@
+.split-pane {
+    -fx-padding: 0 0 0 0;
+}
+
+.split-pane-divider {
+    -fx-padding: 0 0 0 0;
+}
+
+.left-box {
+    -fx-background-color: #ffffff;
+}
+
+.right-box {
+    -fx-background-color: #00121e;
+}
+
+.button {
+    -fx-background-color: royalblue;
+    -fx-background-radius: 5px;
+}
+
+#back-button {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 5px;
+}
+
+#signup-button {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 5px;
+}
+
+/*.login-button:hover .register-button:hover {*/
+/*    -fx-background-color: #3943F8FF;*/
+/*    -fx-border-radius: 5px;*/
+/*}*/

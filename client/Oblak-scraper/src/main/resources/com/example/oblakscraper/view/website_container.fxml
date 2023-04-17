@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" maxHeight="180.0" maxWidth="200.0" onMouseClicked="#onWebsiteClicked" spacing="10.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oblakscraper.controllers.WebsiteContainerController">
+   <children>
+      <ImageView fx:id="thumbnail" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="title" contentDisplay="CENTER" text="Text" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font></Label>
+   </children>
+</VBox>

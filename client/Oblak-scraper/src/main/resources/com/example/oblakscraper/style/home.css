@@ -1,0 +1,107 @@
+.split-pane {
+    -fx-padding: 0 0 0 0;
+}
+
+.split-pane-divider {
+    -fx-padding: 0 0 0 0;
+}
+
+.box {
+    -fx-background-color: #00121e;
+}
+
+#search-button {
+    -fx-background-color: royalblue;
+    -fx-background-radius: 5px;
+}
+
+.scroll-pane {
+    -fx-background-color: #1b1b1b;
+}
+
+#back-button {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 5px;
+}
+
+.text-area {
+    -fx-background-insets: 0;
+    -fx-background-color:  #00121e;
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 10px;
+}
+
+.text-area .content {
+    -fx-background-color:  #00121e;
+    -fx-background-radius: 10px;
+    -fx-padding: 10px;
+}
+
+.text-area:focused .content {
+    -fx-background-color:  #00121e;
+}
+
+.text-area:focused {
+    -fx-highlight-fill: #7ecfff;
+}
+
+/*.text-area .content {*/
+/*    -fx-padding: 10px;*/
+/*    -fx-text-fill: gray;*/
+/*    -fx-highlight-fill: #7ecfff;*/
+/*}*/
+
+/*.text-area {*/
+/*    text-area-background: #00121e;*/
+/*    -fx-text-fill: #ffffff;*/
+/*    -fx-border-radius: 5 5 5 5;*/
+/*    -fx-background-radius: 5 5 5 5;*/
+/*}*/
+
+/*.text-area .scroll-pane {*/
+/*    -fx-background-color: transparent;*/
+/*}*/
+/*.text-area .scroll-pane .viewport {*/
+/*    -fx-background-color: transparent;*/
+/*}*/
+
+/*.text-area .scroll-pane .content {*/
+/*    -fx-background-color: #00121e;*/
+/*}*/
+
+/*.text-area .content {*/
+/*    -fx-background-color: text-area-background;*/
+/*}*/
+
+/*#text-box {*/
+/*    -fx-border-color: #1b1b1b;*/
+/*    -fx-border-radius: 10px;*/
+/*    -fx-border-width: 2px;*/
+/*}*/
+
+
+.scroll-bar:horizontal, .scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+
+.increment-button, .decrement-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0em;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+    -fx-background-color: royalblue;
+    -fx-background-radius: 5em;
+}
+
+/*.scroll-pane > .corner {*/
+/*    -fx-background-color: black;*/
+/*}*/

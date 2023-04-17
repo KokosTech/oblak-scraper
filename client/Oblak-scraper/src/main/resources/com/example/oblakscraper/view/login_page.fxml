@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<SplitPane dividerPositions="0.4" minHeight="540.0" minWidth="960.0" stylesheets="@../style/login.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oblakscraper.controllers.LoginController">
+   <items>
+      <HBox alignment="CENTER" styleClass="left-box">
+         <children>
+            <ImageView fitHeight="480.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/login.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <StackPane fx:id="stack">
+         <children>
+            <VBox fx:id="signupBox" alignment="TOP_CENTER" spacing="60.0" styleClass="right-box">
+               <children>
+                  <VBox spacing="20.0">
+                     <children>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Button id="back-button" fx:id="backButton" focusTraversable="false" maxHeight="30.0" maxWidth="30.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#onBackButtonClick">
+                                 <HBox.margin>
+                                    <Insets right="250.0" />
+                                 </HBox.margin></Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label text="Sign Up" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="26.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                  </VBox>
+                  <VBox alignment="CENTER" spacing="8.0">
+                     <children>
+                        <VBox alignment="CENTER" spacing="5.0">
+                           <children>
+                              <TextField fx:id="signupUsername" focusTraversable="false" maxWidth="250.0" minHeight="40.0" promptText="Username">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></TextField>
+                              <Label fx:id="signupUsernameError" minWidth="250.0" textFill="RED">
+                                 <VBox.margin>
+                                    <Insets left="5.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets left="1.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" spacing="5.0">
+                           <children>
+                              <PasswordField fx:id="signupPassword" focusTraversable="false" maxWidth="250.0" minHeight="40.0" promptText="Password">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </PasswordField>
+                              <Label fx:id="signupPasswordError" minWidth="250.0" textFill="RED">
+                                 <VBox.margin>
+                                    <Insets left="5.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets left="1.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" spacing="5.0">
+                           <children>
+                              <PasswordField fx:id="signupConfirmPassword" focusTraversable="false" maxWidth="250.0" minHeight="40.0" promptText="Confirm Password">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </PasswordField>
+                              <Label fx:id="signupConfirmPasswordError" minWidth="250.0" textFill="RED">
+                                 <padding>
+                                    <Insets left="1.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Button focusTraversable="false" minHeight="40.0" minWidth="250.0" mnemonicParsing="false" onAction="#onRegisterButtonClick" text="Register" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <VBox fx:id="loginBox" alignment="CENTER" spacing="60.0" styleClass="right-box">
+               <children>
+                  <HBox alignment="CENTER" maxHeight="100.0">
+                     <children>
+                        <Label contentDisplay="CENTER" text="Log In" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="26.0" />
+                           </font></Label>
+                     </children></HBox>
+                  <VBox alignment="CENTER" spacing="8.0">
+                     <children>
+                        <VBox alignment="CENTER" spacing="5.0">
+                           <children>
+                              <TextField fx:id="loginUsername" focusTraversable="false" maxWidth="250.0" minHeight="40.0" promptText="Username" styleClass="text-field">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font></TextField>
+                              <Label fx:id="loginUsernameError" minWidth="250.0" textFill="RED">
+                                 <VBox.margin>
+                                    <Insets left="5.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets left="1.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" spacing="5.0">
+                           <children>
+                              <PasswordField fx:id="loginPassword" focusTraversable="false" maxWidth="250.0" minHeight="40.0" promptText="Password" styleClass="text-field">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </PasswordField>
+                              <Label fx:id="loginPasswordError" minWidth="250.0" textFill="RED">
+                                 <VBox.margin>
+                                    <Insets left="5.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets left="1.0" />
+                                 </padding>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+                  <VBox alignment="CENTER" spacing="10.0">
+                     <children>
+                        <Button id="login-button" fx:id="loginButton" focusTraversable="false" minHeight="40.0" minWidth="250.0" mnemonicParsing="false" onAction="#onLoginButtonClick" text="Log In" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font></Button>
+                        <Button id="signup-button" focusTraversable="false" minHeight="40.0" minWidth="250.0" mnemonicParsing="false" onAction="#onSignUpButtonClick" text="Don't have an account? Sign Up">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Button>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </children>
+      </StackPane>
+   </items>
+</SplitPane>
