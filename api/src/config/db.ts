@@ -15,7 +15,7 @@ pool.add("master", {
   user: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABASE,
-  connectionLimit: 50,
+  connectionLimit: 5,
   idleTimeout: 30000,
   leakDetectionTimeout: 30000,
 });
@@ -26,7 +26,7 @@ pool.add("slave", {
   user: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABASE,
-  connectionLimit: 50,
+  connectionLimit: 5,
   idleTimeout: 30000,
   leakDetectionTimeout: 30000,
 });

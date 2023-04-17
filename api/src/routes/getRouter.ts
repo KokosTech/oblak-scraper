@@ -33,11 +33,11 @@ router
       try {
         con = await pool.getConnection();
         const rows = await con.query(
-          `SELECT w.id, w.title, w.url, i.url as thumbnail_url, i.alt as thumbnail_alt 
-            FROM websites w
-            LEFT JOIN images i ON w.id = i.website_id
-            WHERE w.owner_id = ?
-            GROUP BY w.id, i.id`,
+          `SELECT w.id, w.title, w.url, 
+       (SELECT i.url FROM images i WHERE i.website_id = w.id ORDER BY i.id LIMIT 1) as thumbnail_url,
+       (SELECT i.alt FROM images i WHERE i.website_id = w.id ORDER BY i.id LIMIT 1) as thumbnail_alt 
+        FROM websites w
+        `,
           [userId]
         );
 

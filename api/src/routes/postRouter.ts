@@ -22,17 +22,27 @@ router.post(
     const { title, url, text, owner_id, images }: WebsiteRequest = req.body;
 
     // check if user id is the same as owner id
+    logger.warn("userId: " + userId + " owner_id: " + owner_id);
+    // print cookies for debugging
+    logger.warn("Cookies: " + JSON.stringify(req.cookies));
+    logger.warn("Body: " + JSON.stringify(req.body));
+
     if (userId !== owner_id) {
       return res.status(403).json({ status: 403, message: "Forbidden" });
     }
 
     // validate data
-    if (!title || !url || !text || !owner_id) {
+    if (!url || !text || !owner_id) {
       return res.status(400).json({ status: 400, message: "Bad request" });
     }
 
     // upload images to cloudinary
     let newImages: ImageResponse[] | null = null;
+
+    // remove all illegal characters from alt - 
+    images?.forEach((image: ImageRequest) => {
+      image.alt = image.alt.replace(/[^a-zA-Z0-9а-яА-Я ]/g, "");
+    });
 
     if (images !== null && images?.length > 0) {
       try {
@@ -53,6 +63,8 @@ router.post(
         );
       } catch (err) {
         logger.error("[/POST/WEBSITE] Eror uploading images " + err);
+        console.log(images);
+        console.log(err);
         return res
           .status(500)
           .json({ status: 500, message: "Internal server error" });
@@ -64,13 +76,18 @@ router.post(
       images?.length > 0 &&
       images.length !== newImages?.length
     ) {
-      logger.error("[/POST/WEBSITE] Images length mismatch");
+      logger.error(
+        "[/POST/WEBSITE] Images length mismatch " +
+          images.length +
+          " " +
+          newImages?.length
+      );
       return res
         .status(500)
         .json({ status: 500, message: "Internal server error" });
     }
 
-    let con = null;
+    let con: any = null;
     try {
       con = await pool.getConnection();
       con.beginTransaction();
@@ -90,31 +107,34 @@ router.post(
       const websiteId = rows.insertId;
 
       if (images?.length > 0) {
-        const imageRows = await con.query(
-          `INSERT INTO images (url, alt, website_id) VALUES (?, ?, ?)`,
-          [
-            newImages?.map((image) => image.url),
-            newImages?.map((image) => image.alt),
-            websiteId,
-          ]
-        );
+        // for each image, insert into images table
 
-        if (imageRows.length === 0) {
-          con.rollback();
-          logger.warn("No rows inserted into images table creation");
-          return res
-            .status(500)
-            .json({ status: 500, message: "Internal server error" });
-        }
+        images.forEach(async (image: ImageRequest) => {
+          let imageRows = await con.query(
+            `INSERT INTO images (url, alt, website_id) VALUES (?, ?, ?)`,
+            [image.url, image.alt, websiteId]
+          );
+
+          if (imageRows.length === 0) {
+            logger.warn("No rows inserted into images table creation");
+            con.rollback();
+            return res
+              .status(500)
+              .json({ status: 500, message: "Internal server error" });
+          }
+        });
       }
 
       con.commit();
 
-      return res
-        .status(200)
-        .json({ status: 200, message: "Website added", id: websiteId.toString() });
+      return res.status(200).json({
+        status: 200,
+        message: "Website added",
+        id: websiteId.toString(),
+      });
     } catch (err) {
       logger.error("[/POST/WEBSITE] " + err);
+      console.log(err);
 
       if (con) {
         con.rollback();

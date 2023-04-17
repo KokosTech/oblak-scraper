@@ -1,6 +1,8 @@
 import express, { Express, Request, Response } from "express";
 import cookieParser from "cookie-parser";
 import dotenv from "dotenv";
+import os from "os";
+
 import pool from "./config/db.js";
 import logger from "./config/logger.js";
 import errorHandler from "./middlewares/errorHandler.js";
@@ -28,6 +30,8 @@ interface User {
 app.get("/", (req: Request, res: Response) => {
   res.send(
     `Welcome to Oblak API, please use <strong>/api/v1</strong>
+    <br/>
+    Container hostname: <strong>${os.hostname()}</strong>
     <br/>
     For documentaiton visit:
     <br/>
