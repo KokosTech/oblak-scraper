@@ -1,35 +1,36 @@
 import dotenv from "dotenv";
-// config for MariaDB
-
-// import { createConnection } from "typeorm";
-//
-// export const db = async () => {
-//   await createConnection({
-//     type: "mariadb",
-//     host: process.env.DB_HOST,
-//     port: 3306,
-//     username: process.env.DB_USER,
-//     password: process.env.DB_PASSWORD,
-//     database: process.env.DB_NAME,
-//     entities: [__dirname + "/../models/*.ts"],
-//     synchronize: true,
-//   });
-// };
-
-// without ORM - pure sql
-
 import mariadb from "mariadb";
 
-// get from .env
 dotenv.config();
 
+const pool = mariadb.createPoolCluster({
+  defaultSelector: "RR",
+  removeNodeErrorCount: 1,
+  restoreNodeTimeout: 0,
+});
 
-
-export const pool = mariadb.createPool({
+pool.add("master", {
   host: process.env.DB_HOST,
-  port: process.env.DB_PORT,
-  user: process.env.DB_USERNAME
+  port: parseInt(process.env.DB_PORT as string, 10) || 3306,
+  user: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_DATABASE,
   connectionLimit: 5,
+  idleTimeout: 30000,
+  leakDetectionTimeout: 30000,
 });
+
+pool.add("slave", {
+  host: process.env.DB_HOST,
+  port: parseInt(process.env.DB_PORT as string, 10) || 3306,
+  user: process.env.DB_USERNAME,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE,
+  connectionLimit: 5,
+  idleTimeout: 30000,
+  leakDetectionTimeout: 30000,
+});
+
+
+
+export default pool;

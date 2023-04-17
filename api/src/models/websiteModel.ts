@@ -1,3 +1,4 @@
+import { Request } from "express";
 import { Image, ImageRequest } from "./imageModel";
 
 export type Website = {
@@ -5,8 +6,8 @@ export type Website = {
   title: string;
   url: string;
   text: string;
-  images: Image[];
   owner_id: number;
+  images: Image[];
 };
 
 export type WebsiteRequest = {
@@ -25,9 +26,21 @@ export type WebsiteResponse = {
   images: Image[];
 };
 
+export type WebsiteThumbnailDb = {
+  id?: number;
+  title?: string;
+  url?: string;
+  thumbnail_url?: string | null;
+  thumbnail_alt?: string | null;
+};
 
 export type WebsiteThumbnailResponse = {
     id: number;
     title: string;
-    thumbnail: Image;
+    url: string;
+    thumbnail: Image | null;
 };
+
+export interface WebsiteIdRequest extends Request {
+  websiteId?: number;
+}

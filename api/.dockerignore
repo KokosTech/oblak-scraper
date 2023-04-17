@@ -1,8 +1,8 @@
 dist/
 node_modules/
 logs/
+old_cofigs
 
-.env
 .yarn-integrity
 
 *.zip
