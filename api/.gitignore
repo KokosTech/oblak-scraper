@@ -1,4 +1,8 @@
 dist/
 node_modules/
+logs/
 
 .env
+.yarn-integrity
+
+*.zip

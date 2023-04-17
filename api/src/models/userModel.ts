@@ -1,10 +1,20 @@
+import { Request } from "express";
+
 export type User = {
-    id: number;
-    username: string;
-    passhash: string;
+  id: number;
+  username: string;
+  passhash: string;
 };
 
-export type UserRequest = {
-    username: string;
-    password: string;
+export type UserId = {
+  id: number;
 };
+
+export interface UserIdRequest extends Request {
+  userId?: number;
+}
+
+export interface UserRequest extends Request {
+  username?: string;
+  password?: string;
+}
