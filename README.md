@@ -10,12 +10,12 @@ Go to `/test-db` for instructions
 
 #### Production DB
   
-TBD - @Constantine
+Go to `/prod-db` for instructions
 
 ### API
 
 Go to `/api` for instructions
 
-### Client 
+### Client & Scraper
 
-TBD - @Kris @Chris
+Go to `/client`  for instructions
