@@ -48,9 +48,11 @@ router.post(
       try {
         newImages = await Promise.all(
           images?.map(async (image: ImageRequest) => {
+            const id = `website_${owner_id}_${title}_${image.alt || "no_alt"}_${Date.now()}`;
+            // remove all whitespace from id
             const res = await cloudinary.uploader.upload(image.url, {
-              public_id: `website_${owner_id}_${title}_${image.alt}`,
-              folder: "websites",
+              public_id: id.replace(/\s/g, ""),
+              folder: `websites/${owner_id}`,
               overwrite: true,
               invalidate: true,
             });
