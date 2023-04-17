@@ -49,3 +49,7 @@ Step 4 - Check the status of the services
 ```bash
 docker stack services prod
 ```
+
+## Notes:
+
+You can look at api/old_configs - for old configurations for High Availability and multiple nodes. The latest and working one doesn't require any special configurations except the docker-compose.yml file.
