@@ -1,6 +1,7 @@
 dist/
 node_modules/
 logs/
+old_cofigs
 
 .yarn-integrity
 

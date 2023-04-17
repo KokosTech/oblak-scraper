@@ -37,7 +37,7 @@ router
        (SELECT i.url FROM images i WHERE i.website_id = w.id ORDER BY i.id LIMIT 1) as thumbnail_url,
        (SELECT i.alt FROM images i WHERE i.website_id = w.id ORDER BY i.id LIMIT 1) as thumbnail_alt 
         FROM websites w
-        `,
+        WHERE w.owner_id = ?`,
           [userId]
         );
 
