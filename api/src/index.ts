@@ -12,6 +12,7 @@ import postRouter from "./routes/postRouter.js";
 dotenv.config();
 
 const app: Express = express();
+const host: string = (process.env.HOST as string) || "0.0.0.0";
 const port: number = parseInt(process.env.PORT as string, 10) || 8080;
 
 app.use(express.json());
@@ -52,8 +53,8 @@ const test_db = async () => {
 const start = (port: number) => {
   try {
     test_db();
-    app.listen(port, () => {
-      logger.info(`Api up and running at: http://localhost:${port}`);
+    app.listen(port, host, () => {
+      logger.info(`Api up and running at: http://${host}:${port}`);
     });
   } catch (error) {
     console.error(error);
