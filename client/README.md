@@ -2,7 +2,7 @@
 
 How to run the project?
 
-Here are the steps to download and set up JavaFX in IntelliJ IDEA (it is the easy and pleasure way):
+Here are the steps to download and set up JavaFX in IntelliJ IDEA (it is the easiest and most pleasure way):
 
 1) Download JavaFX SDK: Go to the JavaFX website (https://openjfx.io/) and download the JavaFX SDK for your platform. Make sure to download the version that matches the version of Java that you are using in your project.
 2) Extract JavaFX SDK: Extract the contents of the downloaded JavaFX SDK file to a directory on your computer.
