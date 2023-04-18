@@ -15,3 +15,9 @@ Helpful link: https://openjfx.io/openjfx-docs/
 There is a Dockerfile uploaded, but due to configuration issues related to JavaFX, it is partially not working. Just Java...
 
 Results:
+
+<img width="958" alt="image" src="https://github.com/KokosTech/oblak-scraper/blob/main/client/demo/1.png">
+
+<img width="958" alt="image" src="https://github.com/KokosTech/oblak-scraper/blob/main/client/demo/2.png">
+
+<img width="958" alt="image" src="https://github.com/KokosTech/oblak-scraper/blob/main/client/demo/3.png">
