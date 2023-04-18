@@ -13,3 +13,5 @@ Here are the steps to download and set up JavaFX in IntelliJ IDEA (it is the eas
 Helpful link: https://openjfx.io/openjfx-docs/
 
 There is a Dockerfile uploaded, but due to configuration issues related to JavaFX, it is partially not working. Just Java...
+
+Results:
